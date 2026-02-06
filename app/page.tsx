@@ -1,8 +1,9 @@
 "use client"
+import { alpha } from "motion";
 import Image from "next/image";
-// import { useState } from "react";
+import { useState } from "react";
 
-import { useEffect } from 'react';
+import { MouseEventHandler, useEffect } from 'react';
 
 export function ScrollPolyfill() {
   useEffect(() => {
@@ -108,10 +109,33 @@ const DISCORD_CARD = { name: "Discord.js", bg_color: "#4589BA", txt_color: "#89B
 
 
 export function TitleCard() {
+  const [MacButtonText, setMacButtonText] = useState("Mac");
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-+_=()[]{}|<>?`~".split("");
+
   return (
     <section id="TitleCard" className="flex flex-col items-center justify-center h-screen bg-primary-blue-400 text-primary-blue-100 cursor-default overflow-hidden">
       <div className="grow-in">
-        <h1 className="text-center text-5xl max-sm:text-3xl font-bold">Samuel <span className="hover:text-primary-purple-400 duration-300">Mac</span> Klosky</h1>
+        <h1 className="text-center text-5xl max-sm:text-3xl font-bold">Samuel <button className="hover:text-primary-purple-400 duration-300 select-none cursor-pointer" 
+         onClick={() => {
+          let iteration = 0;
+          const current_text = MacButtonText.split("");
+
+          const interval = setInterval(() => {
+            const randomValues = current_text.map(
+              () => alphabet[Math.floor(Math.random() * alphabet.length)]
+            ).join("");
+            console.log(randomValues);
+            setMacButtonText(randomValues);
+            iteration += 1;
+
+            if (iteration > 10) {
+              clearInterval(interval);
+              setMacButtonText("Mac");
+            }
+
+          }
+        , 45);
+         }}>{MacButtonText}</button> Klosky</h1>
         <p className="text-center text-3xl max-sm:text-xl font-medium">Computer Programmer</p>
         <span className="text-center text-2xl max-sm:text-xs max-sm:space-x-1 p-2 space-x-4 flex">
           <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300">in/samuelklosky</a>
@@ -170,10 +194,12 @@ type ProjectPreviewCardProps = {
 
 export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
   return (
-    <div className="bg-primary-blue-700 w-full max-w-sm h-auto rounded-lg overflow-hidden 
-     transition-all duration-300 hover:scale-105 flex flex-col flex-wrap card-border border border-primary-blue-600
-     shadow-[5px_5px_5px_5px] shadow-primary-blue-800 hover:shadow-[0px_0px_5px_5px]
-     scroll-dramatic-grow-in 
+    <div className="bg-primary-blue-700 w-full max-w-sm h-auto overflow-hidden 
+     card-border border border-primary-blue-600 rounded-lg
+     flex flex-col flex-wrap
+     shadow-[5px_5px_5px_5px] shadow-primary-blue-800 
+     hover:shadow-[0px_0px_5px_5px] hover:scale-115
+     scroll-dramatic-grow-in  transition-all duration-300
     ">
       {/* Image Section */}
       {props.image_url && (
