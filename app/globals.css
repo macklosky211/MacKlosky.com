@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary-blue-50: #a9d6e5ff;
+  --color-primary-blue-100: #89c2d9ff;
+  --color-primary-blue-200: #61a5c2ff;
+  --color-primary-blue-300: #468fafff;
+  --color-primary-blue-400: #2c7da0ff;
+  --color-primary-blue-500: #2a6f97ff;
+  --color-primary-blue-600: #014f86ff;
+  --color-primary-blue-700: #01497cff;
+  --color-primary-blue-800: #013a63ff;
+  --color-primary-blue-900: #012a4aff;
+
+  --color-primary-red-50: #fef2f2;
+  --color-primary-red-100: #fee2e2;
+  --color-primary-red-200: #fecaca;
+  --color-primary-red-300: #fca5a5;
+  --color-primary-red-400: #f87171;
+  --color-primary-red-500: #ef4444;
+  --color-primary-red-600: #dc2626;
+  --color-primary-red-700: #b91c1c;
+  --color-primary-red-800: #991b1b;
+  --color-primary-red-900: #7f1d1d;
+
+  --color-primary-green-50: #f0fdf4;
+  --color-primary-green-100: #dcfce7;
+  --color-primary-green-200: #bbf7d0;
+  --color-primary-green-300: #86efac;
+  --color-primary-green-400: #4ade80;
+  --color-primary-green-500: #22c55e;
+  --color-primary-green-600: #16a34a;
+  --color-primary-green-700: #15803d;
+  --color-primary-green-800: #166534;
+  --color-primary-green-900: #14532d;
+
+  --color-primary-yellow-50: #fffbeb;
+  --color-primary-yellow-100: #fef3c7;
+  --color-primary-yellow-200: #fde68a;
+  --color-primary-yellow-300: #fcd34d;
+  --color-primary-yellow-400: #fbbf24;
+  --color-primary-yellow-500: #f59e0b;
+  --color-primary-yellow-600: #d97706;
+  --color-primary-yellow-700: #b45309;
+  --color-primary-yellow-800: #92400e;
+  --color-primary-yellow-900: #78350f;
+
+  --color-primary-purple-50: #faf5ff;
+  --color-primary-purple-100: #f3e8ff;
+  --color-primary-purple-200: #e9d5ff;
+  --color-primary-purple-300: #d8b4fe;
+  --color-primary-purple-400: #c084fc;
+  --color-primary-purple-500: #a855f7;
+  --color-primary-purple-600: #9333ea;
+  --color-primary-purple-700: #7c3aed;
+  --color-primary-purple-800: #6b21a8;
+  --color-primary-purple-900: #581c87;
+
+  --color-primary-orange-50: #fff7ed;
+  --color-primary-orange-100: #ffedd5;
+  --color-primary-orange-200: #fed7aa;
+  --color-primary-orange-300: #fdba74;
+  --color-primary-orange-400: #fb923c;
+  --color-primary-orange-500: #f97316;
+  --color-primary-orange-600: #ea580c;
+  --color-primary-orange-700: #c2410c;
+  --color-primary-orange-800: #9a3412;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: var(--color-primary-blue-400); */
+  /* color: var(--color-primary-blue-100); */
+  padding: calc(var(--spacing) * 0);
+  margin: calc(var(--spacing) * 0);
+
+  transition-duration: 300ms;
+}
+
+.large-caret {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  
+
+  width: 8rem;
+  height: 8rem;
+  cursor: pointer;
+
+  transform: translateX(-50%);
+  transform-origin: center;
+
+  animation: grow-in-centered ease both;
+  animation-timeline: view();
+  animation-range: 50% 0%;
+}
+
+.large-caret::after {
+  content: 'v';
+  font-size: 12rem;
+  position: absolute;
+  pointer-events: none;
+  cursor: not-allowed;
+
+  top: 50%;
+  left: 50%;
+  animation: gentle-bounce 5s infinite;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+.grow-in {
+  animation: grow-in 1s forwards;
+}
+
+.scroll-dramatic-grow-in {
+  animation: dramatic-grow-in ease both;
+  animation-timeline: view();
+  animation-range: 0% 100%;
+}
+
+
+@keyframes gentle-bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(-4.5rem);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-2.5rem);
+  }
+}
+
+@keyframes grow-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes dramatic-grow-in {
+  0%, 100% {
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+  40%, 60% {
+    transform: scale(1);
+    opacity: 1.0;
+  }
+}
+
+@keyframes grow-in-centered {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
