@@ -109,7 +109,7 @@ const DISCORD_CARD = { name: "Discord.js", bg_color: "#4589BA", txt_color: "#89B
 
 export function TitleCard() {
   const [MacButtonText, setMacButtonText] = useState("Mac");
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*-+_=()[]{}|<>?`~".split("");
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_=()[]{}<>?`~".split("");
 
   return (
     <section id="TitleCard" className="flex flex-col items-center justify-center h-screen bg-primary-blue-400 text-primary-blue-100 cursor-default overflow-hidden">
@@ -117,23 +117,32 @@ export function TitleCard() {
         <h1 className="text-center text-5xl max-sm:text-3xl font-bold">Samuel <button className="hover:text-primary-purple-400 duration-300 select-none cursor-pointer" 
          onClick={() => {
           let iteration = 0;
+          const original_text = "Mac";
           const current_text = MacButtonText.split("");
+          const max_iterations = 50;
+          const index_interval = (max_iterations / original_text.length);
 
           const interval = setInterval(() => {
             const randomValues = current_text.map(
-              () => alphabet[Math.floor(Math.random() * alphabet.length)]
+              (val, index) => {
+                
+                if (iteration >= index * index_interval) {
+                  return original_text[index];
+                }
+
+                return alphabet[Math.floor(Math.random() * alphabet.length)]
+              }
             ).join("");
-            console.log(randomValues);
+
             setMacButtonText(randomValues);
             iteration += 1;
 
-            if (iteration > 10) {
+            if (iteration > max_iterations) {
               clearInterval(interval);
-              setMacButtonText("Mac");
             }
 
           }
-        , 45);
+        , 30);
          }}>{MacButtonText}</button> Klosky</h1>
         <p className="text-center text-3xl max-sm:text-xl font-medium">Computer Programmer</p>
         <span className="text-center text-2xl max-sm:text-xs max-sm:space-x-1 p-2 space-x-4 flex">
