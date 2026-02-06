@@ -1,9 +1,8 @@
 "use client"
-import { alpha } from "motion";
 import Image from "next/image";
 import { useState } from "react";
 
-import { MouseEventHandler, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export function ScrollPolyfill() {
   useEffect(() => {
