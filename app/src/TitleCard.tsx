@@ -38,8 +38,8 @@ export function TitleCard() {
                         }
                             , 30);
                     }}>{MacButtonText}</button> Klosky</h1>
-                <p className="text-center text-3xl max-sm:text-xl font-medium">Computer Programmer</p>
-                <span className="text-center text-2xl max-sm:text-xs max-sm:space-x-1 p-2 space-x-4 flex">
+                <p className="text-center text-3xl max-sm:text-xl font-semibold">Software Engineer</p>
+                <span className="text-center text-2xl max-sm:text-xs max-sm:space-x-1 space-x-4 flex">
                     <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300">in/samuelklosky</a>
                     <p>|</p>
                     <a target="_blank" href="https://github.com/macklosky211/" className="hover:text-primary-purple-400 duration-300">git/macklosky211</a>

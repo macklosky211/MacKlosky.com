@@ -12,27 +12,26 @@ export default function Main() {
       <TitleCard></TitleCard>
       <SectionDivider></SectionDivider>
       <ProjectSection>
-        {/* Rotary Compression Tester */}
         <ProjectPreviewCard
           project_name="Rotary Engine Compression Tester"
-          project_description="This project allows for measuring the compression of the different chambers within an rotary engine."
-          project_description_subtext="IFYKYK my RX8 was not in fact ok..."
+          project_description="A hardware and software tool used to measure compression across individual chambers in a rotary engine for diagnostics and engine health analysis."
+          project_description_subtext="My RX8 was, in fact, not okay..."
           image_url="/images/RotaryCompressionTesterThumbnail.png"
           technologies={[ARDUINO_CARD, CPP_CARD, B13_CARD]}
           github_link="https://github.com/macklosky211/rotary-compression-tester"
         />
         <ProjectPreviewCard
           project_name="Mouflon.dev"
-          project_description={<><span>This is a full stack Saas that me and my brother <a href="https://benklosky.com" target="_blank">(@BenKlosky.com)</a> created to track telemetry for different Hytale servers.</span></>}
-          project_description_subtext="Lots of SQL"
+          project_description={<><span>A full-stack SaaS platform built to collect, store, and visualize telemetry data from Hytale servers, designed with scalability and heavy database usage in mind. Created with my brother: <a href="https://benklosky.com" target="_blank">@BenKlosky.com</a> </span></>}
+          project_description_subtext="Lots of SQL."
           image_url="/images/Mouflon_thumbnail.png"
           technologies={[HYTALE_CARD, JAVA_CARD, POSTGRES_CARD, CLICKHOUSE_CARD]}
           project_link="https://mouflon.dev"
         />
         <ProjectPreviewCard
           project_name="Gladiator Arena Browser Game"
-          project_description="This was a simple browser based arena fighting game with a focus on momentum and combos."
-          project_description_subtext="This was used as a school project"
+          project_description="A browser-based arena fighting game focused on momentum-driven movement and combo-based combat, created as part of a school project."
+          // project_description_subtext=""
           image_url="/images/gladiator_arena_thumbnail.png"
           technologies={[GODOT_CARD, GDSCRIPT_CARD, BLENDER_CARD, ADOBE_SUBSTANCE_CARD]}
           project_link="https://hollowhunts.itch.io/cs-325-project"
@@ -40,8 +39,8 @@ export default function Main() {
         />
         <ProjectPreviewCard
           project_name="Hytale Mod's Collection"
-          project_description="This is a collection of mods I created for the game Hytale."
-          project_description_subtext=">400 users"
+          project_description="A collection of Hytale mods developed to extend gameplay systems and improve server customization. Features projects such as daily login rewards, and loot boxes."
+          project_description_subtext="400+ users!"
           image_url="/images/hytale_mods_thumbnail.png"
           technologies={[HYTALE_CARD, JAVA_CARD]}
           project_link="https://www.curseforge.com/members/katsi/projects"
@@ -49,24 +48,24 @@ export default function Main() {
         />
         <ProjectPreviewCard
           project_name="GMTK Game Jam - F.A.M"
-          project_description="This is a game me and my friend made in 4 days for the GMTK game jam."
-          project_description_subtext="Yes I did the music... I really shouldnt have."
+          project_description={<span>A complete game built in four days for the GMTK Game Jam, focusing on a single core mechanic and rapid iteration under tight time constraints. Created with my friend <a href="https://github.com/Abarr27" target="_blank">@Abarr27</a></span>}
+          project_description_subtext="Yes, I did the music. Deadlines were involved... I'm sorry..."
           image_url="/images/FAM_thumbnail.png"
           technologies={[GODOT_CARD, GDSCRIPT_CARD, BLENDER_CARD, ADOBE_SUBSTANCE_CARD]}
           project_link="https://hollowhunts.itch.io/forced-action-manipulator"
         />
         <ProjectPreviewCard
           project_name="Stratos"
-          project_description="This is a simple game project which includes a movement based arena shooter with multiplayer functionality."
-          project_description_subtext="P2P networking!"
+          project_description="A movement-based arena shooter featuring peer-to-peer multiplayer, built to explore fast traversal mechanics and networking fundamentals."
+          project_description_subtext="P2P networking included!"
           image_url="/images/Stratos_thumbnail.png"
           technologies={[GODOT_CARD, GDSCRIPT_CARD, BLENDER_CARD]}
           github_link="https://github.com/macklosky211/Stratos"
         />
         <ProjectPreviewCard
           project_name="Fair Role Distributor Discord Bot"
-          project_description="This was designed so that me and my friends could distribute roles between the lot of us fairly."
-          project_description_subtext="There's a whole priority system!"
+          project_description="A Discord bot that fairly distributes roles using a time based priority system."
+          project_description_subtext="There’s a full priority system!"
           image_url="/images/Fair_Role_Distro_thumbnail.png"
           technologies={[DISCORD_CARD, JAVASCRIPT_CARD]}
           github_link="https://github.com/macklosky211/Fair-Role-Distributor-Discord-Bot"
@@ -152,7 +151,6 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
      shadow-[5px_5px_5px_5px] shadow-primary-blue-700 
      hover:shadow-[0px_0px_5px_5px] hover:scale-115
      scroll-dramatic-grow-in  duration-300
-     
     ">
       {/* Image Section */}
       {props.image_url && (
