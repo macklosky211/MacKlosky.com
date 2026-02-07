@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 
 const IbmPlexMono = IBM_Plex_Mono({
   variable : "--font-ibm-plex-mono",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
@@ -31,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${IbmPlexMono.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${IbmPlexMono.variable} ${geistMono.variable} antialiased hidden`}
       >
         {children}
       </body>

@@ -1,8 +1,8 @@
-"use client"
+
 import Image from "next/image";
-import { useState } from "react";
 
 import ScrollPolyfill from "./src/ScrollPolyfill";
+import { TitleCard } from "./src/TitleCard";
 
 export default function Main() {
 
@@ -103,61 +103,7 @@ const DISCORD_CARD = { name: "Discord.js", bg_color: "#9C6B2F", txt_color: "#EAF
 const HYTALE_CARD = { name: "Hytale", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
 const GODOT_CARD = { name: "Godot", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
 
-export function TitleCard() {
-  const [MacButtonText, setMacButtonText] = useState("Mac");
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_=()[]{}<>?`~".split("");
 
-  return (
-    <section id="TitleCard" className="flex flex-col items-center justify-center h-screen bg-primary-blue-400 text-primary-blue-100 cursor-default overflow-hidden">
-      <div className="grow-in">
-        <h1 className="text-center text-5xl max-sm:text-3xl font-bold">Samuel <button className="hover:text-primary-purple-400 duration-300 select-none cursor-pointer" 
-         onClick={() => {
-          let iteration = 0;
-          const original_text = "Mac";
-          const current_text = MacButtonText.split("");
-          const max_iterations = 50;
-          const index_interval = (max_iterations / original_text.length);
-
-          const interval = setInterval(() => {
-            const randomValues = current_text.map(
-              (val, index) => {
-                
-                if (iteration >= index * index_interval) {
-                  return original_text[index];
-                }
-
-                return alphabet[Math.floor(Math.random() * alphabet.length)]
-              }
-            ).join("");
-
-            setMacButtonText(randomValues);
-            iteration += 1;
-
-            if (iteration > max_iterations) {
-              clearInterval(interval);
-            }
-
-          }
-        , 30);
-         }}>{MacButtonText}</button> Klosky</h1>
-        <p className="text-center text-3xl max-sm:text-xl font-medium">Computer Programmer</p>
-        <span className="text-center text-2xl max-sm:text-xs max-sm:space-x-1 p-2 space-x-4 flex">
-          <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300">in/samuelklosky</a>
-          <p>|</p>
-          <a target="_blank" href="https://github.com/macklosky211/" className="hover:text-primary-purple-400 duration-300">git/macklosky211</a>
-          <p>|</p>
-          <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300">macklosky21@gmail.com</a>
-        </span>
-        <p className="text-center text-2xl mt-8 max-sm:text-xs hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_self">RESUME</a></p>
-      </div>
-      <button type="button" className="large-caret hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={
-        () => {
-          document.getElementById("ProjectSection")?.scrollIntoView({ behavior: "smooth" });
-        }}><span className="hidden">Mobile Visibility Fix</span></button>
-
-    </section>
-  );
-}
 
 type ProjectSectionProps = {
   children?: React.ReactNode;

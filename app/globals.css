@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--color-primary-blue-400);
+  font-display: fallback;
 }
 
 body {
@@ -35,7 +36,9 @@ body {
   /* color: var(--color-primary-blue-100); */
   padding: calc(var(--spacing) * 0);
   margin: calc(var(--spacing) * 0);
-
+  display: block;
+  overflow-x: hidden;
+  
   transition-duration: 300ms;
 }
 
