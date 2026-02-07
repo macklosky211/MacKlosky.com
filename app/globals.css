@@ -69,6 +69,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-primary-blue-400);
 }
 
 body {
@@ -84,7 +85,8 @@ body {
   position: absolute;
   bottom: 5rem;
   left: 50%;
-  
+
+  display: inline-block; 
 
   width: 8rem;
   height: 8rem;
@@ -93,14 +95,25 @@ body {
   transform: translateX(-50%);
   transform-origin: center;
 
-  animation: grow-in-centered ease both;
+  animation: grow-in-centered 1s ease both;
   animation-timeline: view();
   animation-range: 50% 0%;
+}
+
+@media (width < 40rem /* 640px */) {
+  .large-caret::after {
+    font-size: 5rem;
+  }
+  .large-caret {
+    bottom: 2rem;
+  }
 }
 
 .large-caret::after {
   content: 'v';
   font-size: 12rem;
+  /* display: block; */
+  
   position: absolute;
   pointer-events: none;
   cursor: not-allowed;
@@ -121,7 +134,6 @@ body {
   animation-timeline: view();
   animation-range: 0% 100%;
 }
-
 
 @keyframes gentle-bounce {
   0%, 100% {

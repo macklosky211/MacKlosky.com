@@ -37,7 +37,7 @@ export default function Main() {
         />
         <ProjectPreviewCard
           project_name="Mouflon.dev"
-          project_description="This is a full stack Saas that me and my brother @BenKlosky.com created to track telemetry for different hytale servers."
+          project_description="This is a full stack Saas that me and my brother (@BenKlosky.com) created to track telemetry for different Hytale servers."
           project_description_subtext="Lots of SQL"
           image_url="/images/Mouflon_thumbnail.png"
           technologies={[HYTALE_CARD, JAVA_CARD, POSTGRES_CARD, CLICKHOUSE_CARD]}
@@ -64,6 +64,7 @@ export default function Main() {
         <ProjectPreviewCard
           project_name="GMTK Game Jam - F.A.M"
           project_description="This is a game me and my friend made in 4 days for the GMTK game jam."
+          project_description_subtext="Yes I did the music... I really shouldnt have."
           image_url="/images/FAM_thumbnail.png"
           technologies={[GODOT_CARD, GDSCRIPT_CARD, BLENDER_CARD, ADOBE_SUBSTANCE_CARD]}
           project_link="https://hollowhunts.itch.io/forced-action-manipulator"
@@ -86,6 +87,7 @@ export default function Main() {
         />
         
       </ProjectSection>
+
     </>
   );
 
@@ -152,11 +154,13 @@ export function TitleCard() {
           <p>|</p>
           <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300">macklosky21@gmail.com</a>
         </span>
+        <p className="text-center text-2xl mt-8 hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_blank">RESUME</a></p>
       </div>
       <button type="button" className="large-caret hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={
         () => {
           document.getElementById("ProjectSection")?.scrollIntoView({ behavior: "smooth" });
-        }}></button>
+        }}><span className="hidden">Mobile Visibility Fix</span></button>
+
     </section>
   );
 }
@@ -208,6 +212,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
      shadow-[5px_5px_5px_5px] shadow-primary-blue-800 
      hover:shadow-[0px_0px_5px_5px] hover:scale-115
      scroll-dramatic-grow-in  transition-all duration-300
+     
     ">
       {/* Image Section */}
       {props.image_url && (
