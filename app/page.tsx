@@ -23,7 +23,7 @@ export default function Main() {
         />
         <ProjectPreviewCard
           project_name="Mouflon.dev"
-          project_description="This is a full stack Saas that me and my brother (@BenKlosky.com) created to track telemetry for different Hytale servers."
+          project_description={<><span>This is a full stack Saas that me and my brother <a href="https://benklosky.com" target="_blank">(@BenKlosky.com)</a> created to track telemetry for different Hytale servers.</span></>}
           project_description_subtext="Lots of SQL"
           image_url="/images/Mouflon_thumbnail.png"
           technologies={[HYTALE_CARD, JAVA_CARD, POSTGRES_CARD, CLICKHOUSE_CARD]}
@@ -148,7 +148,7 @@ export function TitleCard() {
           <p>|</p>
           <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300">macklosky21@gmail.com</a>
         </span>
-        <p className="text-center text-2xl mt-8 max-sm:text-xs hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_blank">RESUME</a></p>
+        <p className="text-center text-2xl mt-8 max-sm:text-xs hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_self">RESUME</a></p>
       </div>
       <button type="button" className="large-caret hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={
         () => {
@@ -190,7 +190,7 @@ type Technology = {
 
 type ProjectPreviewCardProps = {
   project_name: string;
-  project_description?: string;
+  project_description?: string | React.ReactNode;
   project_description_subtext?: string;
   image_url?: string;
   project_link?: string;
