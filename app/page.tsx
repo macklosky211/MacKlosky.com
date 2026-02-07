@@ -154,7 +154,7 @@ export function TitleCard() {
           <p>|</p>
           <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300">macklosky21@gmail.com</a>
         </span>
-        <p className="text-center text-2xl mt-8 hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_blank">RESUME</a></p>
+        <p className="text-center text-2xl mt-8 max-sm:text-xs hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_blank">RESUME</a></p>
       </div>
       <button type="button" className="large-caret hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={
         () => {
