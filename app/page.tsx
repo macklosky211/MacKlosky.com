@@ -2,21 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { useEffect } from 'react';
-
-export function ScrollPolyfill() {
-  useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      typeof CSS !== 'undefined' &&
-      !CSS.supports('animation-timeline: scroll()')
-    ) {
-      import('scroll-timeline-polyfill/dist/scroll-timeline.js');
-    }
-  }, []);
-
-  return null;
-}
+import ScrollPolyfill from "./src/ScrollPolyfill";
 
 export default function Main() {
 
@@ -32,7 +18,7 @@ export default function Main() {
           project_description="This project allows for measuring the compression of the different chambers within an rotary engine."
           project_description_subtext="IFYKYK my RX8 was not in fact ok..."
           image_url="/images/RotaryCompressionTesterThumbnail.png"
-          technologies={[CPP_CARD, ARDUINO_CARD, B13_CARD]}
+          technologies={[ARDUINO_CARD, CPP_CARD, B13_CARD]}
           github_link="https://github.com/macklosky211/rotary-compression-tester"
         />
         <ProjectPreviewCard
@@ -74,7 +60,7 @@ export default function Main() {
           project_description="This is a simple game project which includes a movement based arena shooter with multiplayer functionality."
           project_description_subtext="P2P networking!"
           image_url="/images/Stratos_thumbnail.png"
-          technologies={[GODOT_CARD, GDSCRIPT_CARD]}
+          technologies={[GODOT_CARD, GDSCRIPT_CARD, BLENDER_CARD]}
           github_link="https://github.com/macklosky211/Stratos"
         />
         <ProjectPreviewCard
@@ -82,7 +68,7 @@ export default function Main() {
           project_description="This was designed so that me and my friends could distribute roles between the lot of us fairly."
           project_description_subtext="There's a whole priority system!"
           image_url="/images/Fair_Role_Distro_thumbnail.png"
-          technologies={[JAVASCRIPT_CARD, DISCORD_CARD]}
+          technologies={[DISCORD_CARD, JAVASCRIPT_CARD]}
           github_link="https://github.com/macklosky211/Fair-Role-Distributor-Discord-Bot"
         />
         
@@ -94,20 +80,28 @@ export default function Main() {
 
 }
 
-const CPP_CARD = { name: "C++", bg_color: "#348E4E", txt_color: "#89D99D" };
-const ARDUINO_CARD = { name: "Arduino", bg_color: "#348B8E", txt_color: "#3DBEC2" };
-const B13_CARD = { name: "13B Renesis", bg_color: "#630101", txt_color: "#C26161" };
-const GODOT_CARD = { name: "Godot", bg_color: "#4595BA", txt_color: "#89C2DC" };
-const GDSCRIPT_CARD = { name: "GDscript", bg_color: "#4558BA", txt_color: "#8997DC" };
-const HYTALE_CARD = { name: "Hytale", bg_color: "#4558BA", txt_color: "#8997DC" };
-const JAVA_CARD = { name: "Java", bg_color: "#BA6C45", txt_color: "#DCA589" };
-const BLENDER_CARD = { name: "Blender", bg_color: "#BA6C45", txt_color: "#DCA589" };
-const ADOBE_SUBSTANCE_CARD = { name: "Adobe Substance Painter", bg_color: "#BA4545", txt_color: "#DC8989" };
-const POSTGRES_CARD = { name: "Postgres", bg_color: "#A6BA45", txt_color: "#CEDC89" };
-const CLICKHOUSE_CARD = { name: "Clickhouse", bg_color: "#62BA45", txt_color: "#9EDC89" };
-const JAVASCRIPT_CARD = { name: "JavaScript", bg_color: "#BABA45", txt_color: "#DCDC89" };
-const DISCORD_CARD = { name: "Discord.js", bg_color: "#4589BA", txt_color: "#89B9DC" };
+/* Languages */
+const CPP_CARD = { name: "C++", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
+const JAVA_CARD = { name: "Java", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
+const GDSCRIPT_CARD = { name: "GDscript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
+const JAVASCRIPT_CARD = { name: "JavaScript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
 
+/* Databases / Tools */
+const POSTGRES_CARD = { name: "Postgres", bg_color: "#6A8F3D", txt_color: "#EAF6FF" };
+const CLICKHOUSE_CARD = { name: "Clickhouse", bg_color: "#6A8F3D", txt_color: "#EAF6FF" };
+
+/* Hardware */
+const B13_CARD = { name: "13B Renesis", bg_color: "#2F8F83", txt_color: "#EAF6FF" };
+
+/* Tools */
+const BLENDER_CARD = { name: "Blender", bg_color: "#6B5B95", txt_color: "#EAF6FF" };
+const ADOBE_SUBSTANCE_CARD = { name: "Adobe Substance Painter", bg_color: "#6B5B95", txt_color: "#EAF6FF" };
+
+/* Platforms / Libraries*/
+const ARDUINO_CARD = { name: "Arduino", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
+const DISCORD_CARD = { name: "Discord.js", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
+const HYTALE_CARD = { name: "Hytale", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
+const GODOT_CARD = { name: "Godot", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
 
 export function TitleCard() {
   const [MacButtonText, setMacButtonText] = useState("Mac");
@@ -206,12 +200,12 @@ type ProjectPreviewCardProps = {
 
 export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
   return (
-    <div className="bg-primary-blue-700 w-full max-w-sm h-auto overflow-hidden 
+    <div className="bg-primary-blue-600 w-full max-w-sm h-auto overflow-hidden 
      card-border border border-primary-blue-600 rounded-lg
      flex flex-col flex-wrap
-     shadow-[5px_5px_5px_5px] shadow-primary-blue-800 
+     shadow-[5px_5px_5px_5px] shadow-primary-blue-700 
      hover:shadow-[0px_0px_5px_5px] hover:scale-115
-     scroll-dramatic-grow-in  transition-all duration-300
+     scroll-dramatic-grow-in  duration-300
      
     ">
       {/* Image Section */}
@@ -237,7 +231,6 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
         {/* Technologies Section */}
         {props.technologies && props.technologies.length > 0 && (
           <div className="mb-4">
-            {/* <h3 className="text-sm font-semibold text-primary-blue-100 mb-2">Technologies</h3> */}
             <div className="flex flex-wrap gap-2">
               {props.technologies.map((tech, index) => (
                 <div
@@ -245,7 +238,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                   style={{
                     backgroundColor: tech.bg_color || 'var(--primary-blue-500)'
                   }}
-                  className="border border-primary-blue-700 rounded-md p-2 transition-opacity duration-200 cursor-default hover:opacity-100 opacity-80"
+                  className="border border-primary-blue-900 rounded-md p-2 transition-opacity duration-200 cursor-default hover:brightness-110 "
                 >
                   <p 
                     className="text-xs font-bold"
