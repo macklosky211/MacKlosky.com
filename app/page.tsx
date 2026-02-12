@@ -1,8 +1,8 @@
-
 import Image from "next/image";
 
 import ScrollPolyfill from "./src/ScrollPolyfill";
 import { TitleCard } from "./src/TitleCard";
+import { ProjectLinks } from "./src/ProjectLinks";
 
 export default function Main() {
 
@@ -210,32 +210,11 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
         )}
 
         {/* Links Section */}
-        <div className="flex gap-2 mt-auto pt-2">
-          {/* Live Project Link */}
-          {props.project_link && (
-            <a
-              href={props.project_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 bg-primary-blue-500 hover:bg-primary-blue-400 text-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center text-sm transition-colors duration-200"
-            >
-              Live Project
-            </a>
-          )}
-          
-          {/* Github Link */}
-          {props.github_link && (
-            <a
-              href={props.github_link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 bg-primary-blue-400 hover:bg-primary-blue-300 text-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center text-sm transition-colors duration-200"
-            >
-              Github
-            </a>
-          )}
-
-        </div>
+        <ProjectLinks
+          project_name={props.project_name}
+          project_link={props.project_link}
+          github_link={props.github_link}
+        />
       </div>
     </div>
   );

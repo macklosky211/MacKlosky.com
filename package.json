@@ -11,6 +11,7 @@
   "dependencies": {
     "motion": "^12.33.0",
     "next": "16.1.6",
+    "posthog-js": "^1.347.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "scroll-timeline-polyfill": "^1.1.0"
