@@ -21,12 +21,13 @@ type Technology = {
 export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     return (
         <div className="bg-primary-blue-600 w-full max-w-sm h-auto overflow-hidden 
-     card-border border border-primary-blue-600 rounded-lg
-     shadow-[5px_5px_5px_5px] shadow-primary-blue-700 
-    hover:shadow-[0px_0px_5px_5px] hover:scale-115
-    scroll-dramatic-grow-in  duration-300
-     flex flex-col flex-wrap
-     ">
+            card-border border border-primary-blue-600 rounded-lg
+            shadow-[5px_5px_5px_5px] shadow-primary-blue-700 
+            hover:shadow-[0px_0px_5px_5px] hover:scale-115
+            scroll-dramatic-grow-in  duration-300
+            flex flex-col flex-wrap
+            "
+        >
             {/* Image Section */}
             {props.image_url && (
                 <div className="w-full h-56 overflow-hidden bg-primary-blue-900 relative">
@@ -38,7 +39,6 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                         className="object-cover hover:scale-105 transition-transform duration-300"
                         priority={false}
                         unoptimized
-                        loading="lazy"
                         placeholder="empty"
                     />
                 </div>
