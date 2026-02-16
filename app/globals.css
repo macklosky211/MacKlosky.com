@@ -28,7 +28,8 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--color-primary-blue-400);
-  font-display: fallback;
+  /* font-family: var(--font-jet-brains-mono); */
+  font-family: var(--font-ibm-plex-mono);
 }
 
 body {
@@ -49,8 +50,8 @@ body {
 
   display: inline-block; 
 
-  width: 8rem;
-  height: 8rem;
+  width: 12rem;
+  height: 12rem;
   cursor: pointer;
 
   transform: translateX(-50%);
