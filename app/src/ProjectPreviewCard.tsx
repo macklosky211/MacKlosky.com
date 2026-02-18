@@ -39,8 +39,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
 
     return (
         <>
-            <div ref={previewRef} className="">
-                <div className={`duration-600 transition-all ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
+            <div ref={previewRef} className="h-full w-full">
+                <div className={`duration-600 transition-all h-full w-full ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
                     {PreviewCard(props)}
                 </div>
                 <div className={`fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all duration-600 ${isExpanded ? "scale-100" : "scale-0 pointer-events-none"}`}>
@@ -53,8 +53,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     function PreviewCard(props: ProjectPreviewCardProps) {
         return (
             <div className={`
-                bg-primary-blue-600 w-full max-w-sm max-sm:max-w-xs h-auto overflow-hidden 
-                card-border rounded-lg
+                bg-primary-blue-600 w-full max-w-sm max-sm:max-w-xs min-h-96 h-full overflow-hidden 
+                card-border rounded-lg mx-auto 
                 shadow-[10px_10px_5px_5px] shadow-primary-blue-700 
                 hover:shadow-[5px_5px_5px_5px] hover:scale-115
                 hover:ring-4 hover:ring-primary-purple-500
@@ -125,7 +125,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                     )}
     
                     {/* Links Section */}
-                    <div onClick={(e) => e.stopPropagation()}> {/* this stops from triggering the expansion stuff. */}
+                    <div className="mt-auto">
                         <ProjectLinks
                             project_name={props.project_name}
                             project_link={props.project_link}
@@ -234,6 +234,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                         project_name={props.project_name}
                                         project_link={props.project_link}
                                         github_link={props.github_link}
+                                        is_expanded={true}
                                     />
                                 </div>
 

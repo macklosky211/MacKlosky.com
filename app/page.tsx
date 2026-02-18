@@ -192,9 +192,8 @@ export default function Main() {
           preview_content={{
             project_description: 
                                 <span>
-                                  A puzzle game built in four days for the GMTK Game Jam, 
-                                  focusing on a single core mechanic and iteration under 
-                                  time constraints. Created with my friend 
+                                  A puzzle game built in four days for the GMTK Game Jam.
+                                  Created with my friend 
                                   <PreviewCardLink href="https://github.com/Abarr27" target="_blank">@Abarr27</PreviewCardLink>
                                 </span>,
             project_description_subtext: "I'm sorry about the 'music' I created..."
@@ -359,7 +358,7 @@ export function ProjectSection({ children }: ProjectSectionProps) {
     <section id="ProjectSection" className="w-full bg-primary-blue-500 text-primary-blue-200 py-20">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-7xl font-bold text-center mb-16 text-primary-blue-100">Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {children}
         </div>
       </div>
