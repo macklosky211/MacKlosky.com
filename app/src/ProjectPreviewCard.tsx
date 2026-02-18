@@ -14,6 +14,7 @@ type ProjectPreviewCardProps = {
         project_description_subtext?: string;
     },
     expanded_content : {
+        subtitle_description ?: string | ReactNode;
         project_description?: string | ReactNode;
     }
 }
@@ -52,12 +53,14 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     function PreviewCard(props: ProjectPreviewCardProps) {
         return (
             <div className={`
-                bg-primary-blue-600 w-full max-w-sm h-auto overflow-hidden 
-                card-border border border-primary-blue-600 rounded-lg
-                shadow-[5px_5px_5px_5px] shadow-primary-blue-700 
-                hover:shadow-[0px_0px_5px_5px] hover:scale-115
+                bg-primary-blue-600 w-full max-w-sm max-sm:max-w-xs h-auto overflow-hidden 
+                card-border rounded-lg
+                shadow-[10px_10px_5px_5px] shadow-primary-blue-700 
+                hover:shadow-[5px_5px_5px_5px] hover:scale-115
+                hover:ring-4 hover:ring-primary-purple-500
                 scroll-dramatic-grow-in  duration-300 transition-all
                 flex flex-col flex-wrap cursor-pointer
+                active:scale-95
                 `}
                 onClick={() => setIsExpanded(true)}
             >
@@ -80,7 +83,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 {/* Content Section */}
                 <div className="flex flex-col grow p-6">
                     {/* Title */}
-                    <h2 className="text-lg font-bold text-primary-blue-50 mb-3">
+                    <h2 className="text-2xl font-[--font-large] font-bold text-primary-blue-50 mb-3">
                         {props.project_name}
                     </h2>
     
@@ -97,7 +100,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                         className="border border-primary-blue-900 rounded-md p-2 align-middle transition-opacity duration-200 cursor-default hover:brightness-110 "
                                     >
                                         <p
-                                            className="text-[0.66rem] align-middle font-bold"
+                                            className="text-xs align-middle font-bold"
                                             style={{ color: tech.txt_color || 'var(--primary-blue-100)' }}
                                         >
                                             {tech.name}
@@ -110,13 +113,13 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     
                     {/* Description */}
                     {props.preview_content.project_description && (
-                        <p className="text-primary-blue-100 text-sm mb-2 leading-relaxed">
+                        <p className="text-primary-blue-100 text-lg mb-2 leading-relaxed">
                             {props.preview_content.project_description}
                         </p>
                     )}
     
                     {props.preview_content.project_description_subtext && (
-                        <p className="text-primary-blue-200 text-xs mb-2 leading-relaxed">
+                        <p className="text-primary-blue-200 text-base mb-4 leading-relaxed">
                             {props.preview_content.project_description_subtext}
                         </p>
                     )}
@@ -138,11 +141,11 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
         return (
             <>
                 {/* Background elements */}
-                <div className="fixed inset-0 transition-all duration-300 delay-600 bg-primary-blue-600 pointer-events-none"></div>
-                <div className={`fixed inset-0 transition-all duration-300 delay-300 bg-linear-to-r from-primary-blue-600 to-primary-blue-500 pointer-events-none ${isExpanded ? "opacity-100" : "opacity-0"}`}></div>
+                {/* <div className="fixed inset-0 transition-all duration-300 delay-600 bg-primary-blue-600 pointer-events-none"></div> */}
+                <div className={`fixed inset-0 transition-all duration-200 bg-linear-to-b from-primary-blue-300 to-primary-blue-500 pointer-events-none`}></div>
 
                 {/* Foreground Elements - This contains everything and is scrollable */}
-                <div className="fixed inset-0 overflow-y-auto z-10">
+                <div className="fixed inset-0 overflow-y-auto overflow-x-clip z-10">
                     
                     {/* Back Button */}
                     <button onClick={() => { setIsExpanded(false); }}
@@ -172,18 +175,16 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                     </button>
 
                     {/* Main Container */}
-                    <div className="flex flex-col max-w-7xl mx-auto h-fit my-5 gap-4 px-4">
+                    <div className="flex flex-col max-w-7xl mx-auto h-fit my-5 gap-4 px-4 max-sm:mt-15">
                         {/* Top Row: Title/Summary and Image/Buttons */}
                         <div className="flex flex-row items-start gap-4 max-sm:flex-col">
                             {/* Left Half - Title and Summary */}
-                            <div className="w-1/2 flex flex-col gap-4 max-sm:w-full max-sm:contents">
-                                <h1 className="w-full text-xl text-center underline font-bold text-primary-blue-50 max-sm:order-1">
+                            <div className="w-1/2 flex flex-col max-sm:w-full max-sm:contents">
+                                <h1 className="w-full text-4xl max-sm:text-xl text-center underline font-bold text-primary-blue-50 max-sm:order-1">
                                     {props.project_name}
                                 </h1>
-                                <div className="w-full min-h-32 p-4 max-sm:order-5 text-primary-blue-100">
-                                    <p>
-                                        {props.preview_content.project_description || "Short summary goes here..."}
-                                    </p>
+                                <div className="w-full min-h-32 p-4 text-xl max-sm:order-5 text-primary-blue-100">
+                                    {props.expanded_content.subtitle_description}
                                 </div>
                             </div>
 
@@ -206,7 +207,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
 
                                 {/* Technologies Section */}
                                 {props.technologies && props.technologies.length > 0 && (
-                                    <div className="mb-4 max-sm:order-3">
+                                    <div className=" max-sm:order-3">
                                         <div className="flex flex-wrap gap-2">
                                             {props.technologies.map((tech, index) => (
                                                 <div
@@ -217,7 +218,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                                     className="border border-primary-blue-900 rounded-md p-2 transition-opacity duration-200 cursor-default hover:brightness-110"
                                                 >
                                                     <p
-                                                        className="text-[0.66rem] font-bold"
+                                                        className="text-base font-bold"
                                                         style={{ color: tech.txt_color || 'var(--primary-blue-100)' }}
                                                     >
                                                         {tech.name}
@@ -240,7 +241,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                         </div>
 
                         {/* Description Box - Full Width */}
-                        <div className="w-full min-h-96 p-6 pb-20 text-primary-blue-100">
+                        <div className="w-full min-h-96 p-6 pb-20 text-primary-blue-100 text-xl">
                             {props.expanded_content.project_description || "Project description goes here..."}
                         </div>
                     </div>
@@ -258,7 +259,7 @@ interface PreviewCardLinkProps {
 
 export function PreviewCardLink(props: PreviewCardLinkProps) {
     return (
-        <a className="text-white underline italic" href={props.href} target={props.target} onClick={(e) => { e.stopPropagation(); }}>
+        <a className="text-white italic hover:underline" href={props.href} target={props.target} onClick={(e) => { e.stopPropagation(); }}>
             {props.children}
         </a>
     );

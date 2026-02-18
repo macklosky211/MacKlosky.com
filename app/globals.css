@@ -25,22 +25,21 @@
 
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-large), sans-serif !important;
+}
+
 html {
   scroll-behavior: smooth;
   background-color: var(--color-primary-blue-400);
-  /* font-family: var(--font-jet-brains-mono); */
-  font-family: var(--font-ibm-plex-mono);
+  font-family: var(--font-inter), sans-serif;
 }
 
 body {
-  /* background-color: var(--color-primary-blue-400); */
-  /* color: var(--color-primary-blue-100); */
-  padding: calc(var(--spacing) * 0);
-  margin: calc(var(--spacing) * 0);
+  padding: 0;
+  margin: 0;
   display: block;
   overflow-x: hidden;
-  
-  transition-duration: 300ms;
 }
 
 .large-caret {
@@ -62,6 +61,8 @@ body {
   animation-timeline: view();
   /* animation-range: 50% 0%; */
 
+  font-family: var(--font-ibm-plex-mono);
+
   animation-range: 0% 50%;
   animation-direction: reverse;
 }
@@ -76,6 +77,8 @@ body {
   position: absolute;
   pointer-events: none;
   cursor: not-allowed;
+
+  
 
   top: 50%;
   left: 50%;

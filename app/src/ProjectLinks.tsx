@@ -9,17 +9,23 @@ type ProjectLinksProps = {
 
 export function ProjectLinks({ project_name, project_link, github_link }: ProjectLinksProps) {
   return (
-    <div className="flex gap-2 mt-auto pt-2">
+    <div className="flex gap-2 text-base"
+      onClick={(e) => e.stopPropagation()}
+      onMouseDown={(e) => e.stopPropagation()}
+    >
       {/* Live Project Link */}
       {project_link && (
         <a
           href={project_link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-primary-blue-500 hover:bg-primary-blue-400 text-primary-blue-900 
-            border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center text-xs 
+          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-white hover:scale-105
+            border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center 
             transition-all duration-300 active:scale-95"
-          onClick={() => posthog.capture('project_link_clicked', { project_name, url: project_link })}
+          onClick={(e) => {
+            e.stopPropagation();
+            posthog.capture('project_link_clicked', { project_name, url: project_link });
+          }}
         >
           Live Project
         </a>
@@ -31,10 +37,13 @@ export function ProjectLinks({ project_name, project_link, github_link }: Projec
           href={github_link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-primary-blue-400 hover:bg-primary-blue-300 text-primary-blue-900
-            border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center text-xs 
+          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-white hover:scale-105
+            border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center 
             transition-all duration-300 active:scale-95"
-          onClick={() => posthog.capture('github_link_clicked', { project_name, url: github_link })}
+          onClick={(e) => {
+            e.stopPropagation();
+            posthog.capture('github_link_clicked', { project_name, url: github_link });
+          }}
         >
           Github
         </a>
