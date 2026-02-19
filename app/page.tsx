@@ -11,7 +11,7 @@ export default function Main() {
         <ProjectPreviewCard
           project_name="Rotary Engine Compression Tester"
           image_url="/images/RotaryCompressionTesterThumbnail.png"
-          technologies={[ARDUINO_CARD, CPP_CARD, B13_CARD]}
+          technologies={[ARDUINO_CARD, C_CARD, B13_CARD]}
           github_link="https://github.com/macklosky211/rotary-compression-tester"
           preview_content={{
             project_description: "A hardware and software tool used to measure compression across individual chambers in a rotary engine for diagnostics and engine health analysis.",
@@ -260,7 +260,7 @@ export default function Main() {
                   Implemented custom P2P protocol for player state synchronization,
                   with client-side interpolation to mask latency. 3D assets modeled
                   in Blender with focus on an iterative and modular design. Movement system uses
-                  physics-based velocity calculations for responsive, momentum-driven traversal.
+                  physics based velocity calculations for responsive, momentum-driven traversal.
                 </p>
                 <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
                 <p>
@@ -298,7 +298,7 @@ export default function Main() {
                 <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
                 <p>
                   Solve the problem of manual role assignment in Discord servers where multiple members
-                  want access to limited roles—whether for game slots, moderator positions, or event
+                  want access to limited roles whether for game slots, moderator positions, or event
                   participation.
                 </p>
                 <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
@@ -325,7 +325,7 @@ export default function Main() {
 }
 
 /* Languages */
-const CPP_CARD = { name: "C++", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
+const C_CARD = { name: "C", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
 const JAVA_CARD = { name: "Java", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
 const GDSCRIPT_CARD = { name: "GDscript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
 const JAVASCRIPT_CARD = { name: "JavaScript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
