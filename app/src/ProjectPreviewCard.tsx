@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { ProjectLinks } from "./ProjectLinks";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import posthog from "posthog-js";
 
 type ProjectPreviewCardProps = {
     project_name: string;
@@ -62,7 +63,10 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 flex flex-col flex-wrap cursor-pointer
                 active:scale-95
                 `}
-                onClick={() => setIsExpanded(true)}
+                onClick={() => {
+                    setIsExpanded(true);
+                    posthog.capture('project_card_expanded', {project_name: props.project_name});
+                }}
             >
                 {/* Image Section */}
                 {props.image_url && (
@@ -148,7 +152,10 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 <div className="fixed inset-0 overflow-y-auto overflow-x-clip z-10">
                     
                     {/* Back Button */}
-                    <button onClick={() => { setIsExpanded(false); }}
+                    <button onClick={() => { 
+                        setIsExpanded(false); 
+                        posthog.capture('close_expanded_view_button', {project_name: props.project_name});
+                    }}
                         className="fixed left-5 top-2 z-20
                                 flex items-center justify-center
                                 w-12 h-12 rounded-xl
@@ -260,7 +267,11 @@ interface PreviewCardLinkProps {
 
 export function PreviewCardLink(props: PreviewCardLinkProps) {
     return (
-        <a className="text-white italic hover:underline" href={props.href} target={props.target} onClick={(e) => { e.stopPropagation(); }}>
+        <a className="text-white italic hover:underline" href={props.href} target={props.target} 
+        onClick={(e) => { 
+            e.stopPropagation();
+            posthog.capture('preview_card_link_clicked', {url: props.href}); 
+        }}>
             {props.children}
         </a>
     );
