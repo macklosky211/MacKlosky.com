@@ -1,8 +1,9 @@
 import ScrollPolyfill from "./src/ScrollPolyfill";
 import { TitleCard } from "./src/TitleCard";
 import { PreviewCardLink, ProjectPreviewCard } from "./src/ProjectPreviewCard";
-export default function Main() {
+import Footer from "./src/Footer";
 
+export default function Main() {
   return (
     <>
       <ScrollPolyfill></ScrollPolyfill>
@@ -317,7 +318,7 @@ export default function Main() {
         />
         
       </ProjectSection>
-
+      <Footer></Footer>
     </>
   );
 

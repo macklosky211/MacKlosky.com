@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--color-primary-blue-400);
+  background-color: var(--color-primary-blue-300);
   font-family: var(--font-inter), sans-serif;
 }
 
