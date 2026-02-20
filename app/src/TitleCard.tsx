@@ -44,11 +44,27 @@ export function TitleCard() {
                         }}>{MacButtonText}</span> Klosky</h1>
                     <h2 className="text-center text-5xl max-sm:text-3xl my-5 font-semibold">Software Engineer</h2>
                     <h3 className="text-center text-3xl max-sm:text-sm max-sm:space-x-1 space-x-4 flex text-primary-blue-50">
-                        <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300" onClick={() => posthog.capture('social_link_clicked', { platform: 'linkedin', url: 'https://www.linkedin.com/in/samuelklosky/' })}>in/samuelklosky</a>
-                        <p className="max-sm:hidden">|</p>
-                        <a target="_blank" href="https://github.com/macklosky211/" className="hover:text-primary-purple-400 duration-300" onClick={() => posthog.capture('social_link_clicked', { platform: 'github', url: 'https://github.com/macklosky211/' })}>git/macklosky211</a>
-                        <p className="max-sm:hidden">|</p>
-                        <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300" onClick={() => posthog.capture('social_link_clicked', { platform: 'email', url: 'mailto:macklosky21@gmail.com' })}>macklosky21@gmail.com</a>
+                        <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300" 
+                            onClick={() => posthog.capture('social_link_clicked', { platform: 'linkedin', url: 'https://www.linkedin.com/in/samuelklosky/' })}
+                            >
+                            in/samuelklosky
+                        </a>
+                        <p className="max-sm:hidden">
+                            |
+                        </p>
+                        <a target="_blank" href="mailto:macklosky21@gmail.com" className="hover:text-primary-purple-400 duration-300" 
+                            onClick={() => posthog.capture('social_link_clicked', { platform: 'email', url: 'mailto:macklosky21@gmail.com' })}
+                            >
+                            macklosky21@gmail.com
+                        </a>
+                        <p className="max-sm:hidden">
+                            |
+                        </p>
+                        <a target="_blank" href="https://github.com/macklosky211/" className="hover:text-primary-purple-400 duration-300" 
+                            onClick={() => posthog.capture('social_link_clicked', { platform: 'github', url: 'https://github.com/macklosky211/' })}
+                            >
+                            git/macklosky211
+                        </a>
                     </h3>
                     <h3 className="text-center text-3xl mt-5 max-sm:text-sm text-primary-blue-50 hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_self" onClick={() => posthog.capture('resume_downloaded')}>RESUME</a></h3>
                 </div>
