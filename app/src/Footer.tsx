@@ -4,7 +4,7 @@ import posthog from "posthog-js";
 export default function Footer() {
     return (
         <>
-            <section className="w-screen h-auto py-10 border-t border-primary-blue-300/80 bg-linear-to-b from-primary-blue-500 to-primary-blue-300 text-primary-blue-100">
+            <section className="h-auto py-10 border-t border-primary-blue-300/80 bg-linear-to-b from-primary-blue-500 to-primary-blue-300 text-primary-blue-100">
                 <div className="flex flex-row items-center w-full h-full text-center text-3xl font-(--font-syne) text-primary-blue-50 max-sm:flex-col max-sm:space-y-5">
                     {/* Left Third - Email */}
                     <div className="flex-1 underline hover:text-primary-purple-400 duration-300 hover:scale-105 active:scale-95">
