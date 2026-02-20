@@ -3,7 +3,7 @@ import { IBM_Plex_Mono, Outfit, Inter} from "next/font/google";
 import "./globals.css";
 
 const IbmPlexMono = IBM_Plex_Mono({
-  variable : "--font-ibm-plex-mono",
+  variable : "--font-mono",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   adjustFontFallback: false
 });
@@ -18,7 +18,7 @@ const large_text = Outfit({
 });
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--font-para",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   adjustFontFallback: false
 });
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" className={` ${large_text.variable} ${inter.variable} ${IbmPlexMono.variable} `}>
-      <body className={``}>
+      <body className={`bg-linear-to-r to-[#2A3897] from-[#2A9789]`}>
         {children}
       </body>
     </html>

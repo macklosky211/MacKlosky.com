@@ -58,7 +58,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 card-border rounded-lg mx-auto 
                 shadow-[10px_10px_5px_5px] shadow-primary-blue-700 
                 hover:shadow-[5px_5px_5px_5px] hover:scale-115
-                hover:ring-4 hover:ring-primary-purple-500
+                hover:ring-2 hover:ring-primary-purple-500
                 scroll-dramatic-grow-in  duration-300 transition-all
                 flex flex-col flex-wrap cursor-pointer
                 active:scale-95

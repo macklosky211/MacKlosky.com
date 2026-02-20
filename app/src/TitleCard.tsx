@@ -8,9 +8,9 @@ export function TitleCard() {
 
     return (
         <>
-            <section id="TitleCard" className="flex flex-col items-center justify-center h-screen bg-linear-to-b from-primary-blue-300 to-primary-blue-500 text-primary-blue-100 cursor-default overflow-hidden">
+            <section id="TitleCard" className="flex flex-col items-center justify-center h-screen bg-linear-to-b from-transparent from-5% to-primary-blue-500 text-primary-blue-50 text-shadow-lg cursor-default overflow-hidden">
                 <div className="grow-in">
-                    <h1 className="text-center text-6xl max-sm:text-4xl font-bold">Samuel <button className="hover:text-primary-purple-400 duration-300 select-none cursor-pointer"
+                    <h1 className="text-center text-6xl max-sm:text-4xl font-bold">Samuel <span className="hover:text-primary-purple-400 duration-300 select-none cursor-pointer"
                         onClick={() => {
                             posthog.capture('name_scrambler_clicked');
 
@@ -41,7 +41,7 @@ export function TitleCard() {
 
                             }
                                 , 30);
-                        }}>{MacButtonText}</button> Klosky</h1>
+                        }}>{MacButtonText}</span> Klosky</h1>
                     <h2 className="text-center text-5xl max-sm:text-3xl my-5 font-semibold">Software Engineer</h2>
                     <h3 className="text-center text-3xl max-sm:text-sm max-sm:space-x-1 space-x-4 flex text-primary-blue-50">
                         <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300" onClick={() => posthog.capture('social_link_clicked', { platform: 'linkedin', url: 'https://www.linkedin.com/in/samuelklosky/' })}>in/samuelklosky</a>
@@ -52,7 +52,7 @@ export function TitleCard() {
                     </h3>
                     <h3 className="text-center text-3xl mt-5 max-sm:text-sm text-primary-blue-50 hover:text-primary-purple-400 duration-300"><a href="/pdfs/Samuel_Klosky_Resume.pdf" target="_self" onClick={() => posthog.capture('resume_downloaded')}>RESUME</a></h3>
                 </div>
-                <button type="button" className="large-caret font-[--font-ibm-plex-mono] text-primary-blue-50 hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={() => {
+                <button type="button" className="large-caret font-[--font-mono] text-primary-blue-50 hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={() => {
                     posthog.capture('scroll_to_projects_clicked');
                     document.getElementById("ProjectSection")?.scrollIntoView({ behavior: "smooth" });
                 }}><span className="hidden">Mobile Visibility Fix</span></button>
