@@ -29,7 +29,8 @@ type Technology = {
 export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     const [isExpanded, setIsExpanded] = useState(false);
     const previewRef = useRef<HTMLDivElement>(null);
-    
+    const [isLoaded, setIsLoaded] = useState(false);
+
     useEffect(
         () => {
             document.body.style.overflow = isExpanded ? 'hidden' : 'unset';
@@ -44,7 +45,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 <div className={`duration-600 transition-all h-full w-full ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
                     {PreviewCard(props)}
                 </div>
-                <div className={`fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all duration-600 ${isExpanded ? "scale-100" : "scale-0 pointer-events-none"}`}>
+                <div onLoad={() => { setTimeout(() => setIsLoaded(true), 1500) }} className={` ${isLoaded ? "" : "invisible hidden"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100" : "scale-0 pointer-events-none"} duration-600`}>
                     {ExpandedCard(props)}
                 </div>
             </div>
@@ -52,6 +53,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     )
     
     function PreviewCard(props: ProjectPreviewCardProps) {
+        const [imageVisible, setImageVisible] = useState(false);
+
         return (
             <div className={`
                 bg-primary-blue-600 w-full max-w-sm max-sm:max-w-xs min-h-96 h-full overflow-hidden 
@@ -76,10 +79,13 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                             alt={props.project_name}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-cover hover:scale-105 transition-transform duration-300"
+                            className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? `visible` : `invisible`} `}
                             priority={false}
                             unoptimized
                             placeholder="empty"
+                            onLoad={() => {
+                                setTimeout(() => setImageVisible(true), 250);
+                            }}
                         />
                     </div>
                 )}
@@ -142,6 +148,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     }
     
     function ExpandedCard(props: ProjectPreviewCardProps) {
+        const [imageVisible, setImageVisible] = useState(false);
+
         return (
             <>
                 {/* Background elements */}
@@ -204,10 +212,12 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                             alt={props.project_name}
                                             fill
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className="object-cover hover:scale-105 transition-transform duration-300"
+                                            className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? "" : "hidden invisible"}`}
                                             priority={false}
-                                            unoptimized
                                             placeholder="empty"
+                                            onLoad={() => {
+                                                setTimeout(() => setImageVisible(true), 250);
+                                            }}
                                         />
                                     </div>
                                 )}
