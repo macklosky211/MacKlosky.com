@@ -102,7 +102,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                         style={{
                                             backgroundColor: tech.bg_color || 'var(--primary-blue-500)'
                                         }}
-                                        className="border border-primary-blue-900 rounded-md p-2 align-middle transition-opacity duration-200 cursor-default hover:brightness-110 "
+                                        className="border border-primary-blue-900 rounded-md p-2 align-middle transition-opacity duration-200 cursor-default"
                                     >
                                         <p
                                             className="text-xs align-middle font-bold"
@@ -223,7 +223,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                                     style={{
                                                         backgroundColor: tech.bg_color || 'var(--primary-blue-500)'
                                                     }}
-                                                    className="border border-primary-blue-900 rounded-md p-2 transition-opacity duration-200 cursor-default hover:brightness-110"
+                                                    className="border border-primary-blue-900 rounded-md p-2 transition-opacity duration-200 cursor-default"
                                                 >
                                                     <p
                                                         className="text-base font-bold"

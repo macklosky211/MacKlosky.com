@@ -93,25 +93,27 @@ export function TitleCard() {
                                 <span className="delay-110">s</span>
                                 <span className="delay-120">k</span>
                                 <span className="delay-130">y</span>
+                                <span className="delay-140">2</span>
+                                <span className="delay-150">1</span>
                             </span>
                             <Image
                                 src="/images/mail_icon.svg"
                                 alt="Email Icon"
                                 width={64}
                                 height={64}
-                                className="w-[1em] h-[1em] max-sm:h-[3em] max-sm:w-[3em] inline-block delay-350 duration-300 group-hover:opacity-0 group-hover:w-0 group-hover:-translate-y-10 active:scale-105"
+                                className="w-[1em] h-[1em] max-sm:h-[3em] max-sm:w-[3em] inline-block delay-350 duration-500 group-hover:opacity-0 group-hover:w-0 group-hover:-translate-y-10 active:scale-105"
                             />
                             <span className="flex flex-row text-3xl duration-900 overflow-hidden max-w-0 group-hover:max-w-xs max-sm:hidden transition-all ">
-                                <span className="delay-50">@</span>
-                                <span className="delay-60">g</span>
-                                <span className="delay-70">m</span>
-                                <span className="delay-80">a</span>
-                                <span className="delay-90">i</span>
-                                <span className="delay-100">l</span>
-                                <span className="delay-110">.</span>
-                                <span className="delay-120">c</span>
-                                <span className="delay-130">o</span>
-                                <span className="delay-140">m</span>
+                                <span className="delay-160">@</span>
+                                <span className="delay-170">g</span>
+                                <span className="delay-180">m</span>
+                                <span className="delay-190">a</span>
+                                <span className="delay-200">i</span>
+                                <span className="delay-210">l</span>
+                                <span className="delay-220">.</span>
+                                <span className="delay-230">c</span>
+                                <span className="delay-240">o</span>
+                                <span className="delay-250">m</span>
                             </span>
                         </a>
                         
