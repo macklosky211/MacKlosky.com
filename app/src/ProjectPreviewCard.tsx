@@ -80,12 +80,9 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                             alt={props.project_name}
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? `visible` : `invisible`} `}
+                            className={`object-cover hover:scale-105 transition-transform duration-300 `}
                             priority={true}
                             placeholder="empty"
-                            onLoad={() => {
-                                setTimeout(() => setImageVisible(true), 250);
-                            }}
                         />
                     </div>
                 )}
@@ -213,12 +210,9 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                             alt={props.project_name}
                                             fill
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? "" : "hidden invisible"}`}
+                                            className={`object-cover hover:scale-105 transition-transform duration-300`}
                                             priority={true}
                                             placeholder="empty"
-                                            onLoad={() => {
-                                                setTimeout(() => setImageVisible(true), 250);
-                                            }}
                                         />
                                     </div>
                                 )}
