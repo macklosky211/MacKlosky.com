@@ -17,7 +17,7 @@ export function ProjectLinks({ project_name, project_link, github_link, is_expan
           href={project_link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-white hover:scale-105
+          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-primary-white-100 hover:scale-105
             border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center 
             transition-all duration-300 active:scale-95 w-2/5"
           onClick={(e) => {
@@ -36,7 +36,7 @@ export function ProjectLinks({ project_name, project_link, github_link, is_expan
           href={github_link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-white hover:scale-105
+          className="flex-1 bg-primary-purple-400 hover:bg-primary-purple-300 text-primary-white-100 hover:scale-105
             border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center align-bottom
             transition-all duration-300 active:scale-95 w-2/5"
           onClick={(e) => {
@@ -51,7 +51,7 @@ export function ProjectLinks({ project_name, project_link, github_link, is_expan
 
       {!is_expanded && (
         <div 
-          className="flex-none bg-primary-purple-400 hover:bg-primary-purple-300 text-white hover:scale-105
+          className="flex-none bg-primary-purple-400 hover:bg-primary-purple-300 text-primary-white-100 hover:scale-105
             border border-primary-blue-900 font-semibold py-2 px-3 rounded-md text-center 
             transition-all duration-300 active:scale-95 w-1/5"
           >

@@ -3,24 +3,29 @@ import { IBM_Plex_Mono, Outfit, Inter} from "next/font/google";
 import "./globals.css";
 
 const IbmPlexMono = IBM_Plex_Mono({
-  variable : "--font-mono",
+  variable: "--font-mono",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-  adjustFontFallback: false
+  subsets: ["latin"], 
+  display: "swap",    
+  adjustFontFallback: false,
 });
 
 const large_text = Outfit({
   weight: ["400", "500", "600", "700", "800"],
-  variable : "--font-large",
+  variable: "--font-large",
   preload: true,
   style: "normal",
   subsets: ["latin"],
-  adjustFontFallback: false
+  display: "swap",    
+  adjustFontFallback: false,
 });
 
 const inter = Inter({
   variable: "--font-para",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-  adjustFontFallback: false
+  subsets: ["latin"], 
+  display: "swap",    
+  adjustFontFallback: false,
 });
 
 

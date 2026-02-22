@@ -93,7 +93,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 {/* Content Section */}
                 <div className="flex flex-col grow p-6">
                     {/* Title */}
-                    <h2 className="text-2xl font-[--font-large] font-bold text-primary-blue-50 mb-3">
+                    <h2 className="text-2xl font-[--font-large] font-bold text-primary-white-100 mb-3">
                         {props.project_name}
                     </h2>
     
@@ -111,7 +111,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                     >
                                         <p
                                             className="text-xs align-middle font-bold"
-                                            style={{ color: tech.txt_color || 'var(--primary-blue-100)' }}
+                                            style={{ color: tech.txt_color || 'var(--primary-white-100)' }}
                                         >
                                             {tech.name}
                                         </p>
@@ -123,13 +123,13 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     
                     {/* Description */}
                     {props.preview_content.project_description && (
-                        <p className="text-primary-blue-100 text-lg mb-2 leading-relaxed">
+                        <p className="text-primary-white-200 text-lg mb-2 leading-relaxed">
                             {props.preview_content.project_description}
                         </p>
                     )}
     
                     {props.preview_content.project_description_subtext && (
-                        <p className="text-primary-blue-200 text-base mb-4 leading-relaxed">
+                        <p className="text-primary-white-400 text-base mb-4 leading-relaxed">
                             {props.preview_content.project_description_subtext}
                         </p>
                     )}

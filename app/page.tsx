@@ -326,27 +326,27 @@ export default function Main() {
 }
 
 /* Languages */
-const C_CARD = { name: "C", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
-const JAVA_CARD = { name: "Java", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
-const GDSCRIPT_CARD = { name: "GDscript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
-const JAVASCRIPT_CARD = { name: "JavaScript", bg_color: "#4A6FA5", txt_color: "#EAF6FF" };
+const C_CARD = { name: "C", bg_color: "#4A6FA5", txt_color: "#eef7fa" };
+const JAVA_CARD = { name: "Java", bg_color: "#4A6FA5", txt_color: "#eef7fa" };
+const GDSCRIPT_CARD = { name: "GDscript", bg_color: "#4A6FA5", txt_color: "#eef7fa" };
+const JAVASCRIPT_CARD = { name: "JavaScript", bg_color: "#4A6FA5", txt_color: "#eef7fa" };
 
 /* Databases / Tools */
-const POSTGRES_CARD = { name: "Postgres", bg_color: "#6A8F3D", txt_color: "#EAF6FF" };
-const CLICKHOUSE_CARD = { name: "Clickhouse", bg_color: "#6A8F3D", txt_color: "#EAF6FF" };
+const POSTGRES_CARD = { name: "Postgres", bg_color: "#6A8F3D", txt_color: "#eef7fa" };
+const CLICKHOUSE_CARD = { name: "Clickhouse", bg_color: "#6A8F3D", txt_color: "#eef7fa" };
 
 /* Hardware */
-const B13_CARD = { name: "13B Renesis", bg_color: "#2F8F83", txt_color: "#EAF6FF" };
+const B13_CARD = { name: "13B Renesis", bg_color: "#2F8F83", txt_color: "#eef7fa" };
 
 /* Tools */
-const BLENDER_CARD = { name: "Blender", bg_color: "#6B5B95", txt_color: "#EAF6FF" };
-const ADOBE_SUBSTANCE_CARD = { name: "Adobe Substance Painter", bg_color: "#6B5B95", txt_color: "#EAF6FF" };
+const BLENDER_CARD = { name: "Blender", bg_color: "#6B5B95", txt_color: "#eef7fa" };
+const ADOBE_SUBSTANCE_CARD = { name: "Adobe Substance Painter", bg_color: "#6B5B95", txt_color: "#eef7fa" };
 
 /* Platforms / Libraries*/
-const ARDUINO_CARD = { name: "Arduino", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
-const DISCORD_CARD = { name: "Discord.js", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
-const HYTALE_CARD = { name: "Hytale", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
-const GODOT_CARD = { name: "Godot", bg_color: "#9C6B2F", txt_color: "#EAF6FF" };
+const ARDUINO_CARD = { name: "Arduino", bg_color: "#9C6B2F", txt_color: "#eef7fa" };
+const DISCORD_CARD = { name: "Discord.js", bg_color: "#9C6B2F", txt_color: "#eef7fa" };
+const HYTALE_CARD = { name: "Hytale", bg_color: "#9C6B2F", txt_color: "#eef7fa" };
+const GODOT_CARD = { name: "Godot", bg_color: "#9C6B2F", txt_color: "#eef7fa" };
 
 
 
