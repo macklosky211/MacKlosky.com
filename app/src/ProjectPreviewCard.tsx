@@ -45,7 +45,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 <div className={`duration-600 transition-all h-full w-full ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
                     {PreviewCard(props)}
                 </div>
-                <div onLoad={() => { setTimeout(() => setIsLoaded(true), 250) }} className={` ${isLoaded ? "" : "invisible hidden"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100 duration-1050" : "scale-0 pointer-events-none duration-600"} `}>
+                <div onLoad={() => setIsLoaded(true)} className={`${isLoaded ? "duration-600" : "duration-0"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100 duration-1050" : "scale-0 pointer-events-none"} `}>
                     {ExpandedCard(props)}
                 </div>
             </div>
