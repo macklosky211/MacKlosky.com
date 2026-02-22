@@ -43,18 +43,16 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
         <>
             <div ref={previewRef} className="h-full w-full">
                 <div className={`duration-600 transition-all h-full w-full ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
-                    {PreviewCard(props)}
+                    <PreviewCard {...props} />
                 </div>
                 <div onLoad={() => setIsLoaded(true)} className={`${isLoaded ? "duration-600" : "duration-0"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100 duration-1050" : "scale-0 pointer-events-none"} `}>
-                    {ExpandedCard(props)}
+                    <ExpandedCard {...props} />
                 </div>
             </div>
         </>
     )
     
     function PreviewCard(props: ProjectPreviewCardProps) {
-        const [imageVisible, setImageVisible] = useState(false);
-
         return (
             <div className={`
                 from-primary-blue-300 to-primary-blue-500 bg-linear-to-br
@@ -145,8 +143,6 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
     }
     
     function ExpandedCard(props: ProjectPreviewCardProps) {
-        const [imageVisible, setImageVisible] = useState(false);
-
         return (
             <>
                 {/* Background elements */}
