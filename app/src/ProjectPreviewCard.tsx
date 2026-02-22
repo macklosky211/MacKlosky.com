@@ -81,8 +81,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? `visible` : `invisible`} `}
-                            priority={false}
-                            unoptimized
+                            priority={true}
                             placeholder="empty"
                             onLoad={() => {
                                 setTimeout(() => setImageVisible(true), 250);
@@ -215,7 +214,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                             fill
                                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className={`object-cover hover:scale-105 transition-transform duration-300 ${imageVisible ? "" : "hidden invisible"}`}
-                                            priority={false}
+                                            priority={true}
                                             placeholder="empty"
                                             onLoad={() => {
                                                 setTimeout(() => setImageVisible(true), 250);
