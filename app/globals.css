@@ -49,60 +49,6 @@ body {
   overflow-x: hidden;
 }
 
-.large-caret {
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-
-  display: inline-block; 
-
-  width: 12rem;
-  height: 12rem;
-  cursor: pointer;
-
-  transform: translateX(-50%);
-  transform-origin: center;
-  will-change: transform;
-
-  animation: grow-in-centered 1s ease both;
-  animation-timeline: view();
-  /* animation-range: 50% 0%; */
-
-  font-family: var(--font-mono);
-
-  animation-range: 0% 50%;
-  animation-direction: reverse;
-}
-
-.large-caret::after {
-  content: 'v';
-  font-size: 12rem;
-  display: flex;
-  /* display: block; */
-  will-change: transform;
-
-  position: absolute;
-  pointer-events: none;
-  cursor: not-allowed;
-
-  
-
-  top: 50%;
-  left: 50%;
-  animation: gentle-bounce 5s infinite;
-  transform: translate(-50%, -50%);
-  transform-origin: center;
-}
-
-@media (width < 40rem /* 640px */) {
-  .large-caret::after {
-    font-size: 5rem;
-  }
-  .large-caret {
-    bottom: 0.5rem;
-  }
-}
-
 .grow-in {
   animation: grow-in 1s forwards;
 }

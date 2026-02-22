@@ -50,7 +50,7 @@ export function TitleCard() {
                         &nbsp;Klosky
                     </h1>
                     <h2 className="flex justify-center text-center text-5xl max-sm:text-3xl my-5 font-semibold">Software Engineer</h2>
-                    <h2 className="flex justify-center text-center text-5xl max-sm:text-sm max-sm:space-x-1 space-x-5 flex-row justify-center text-primary-blue-50">
+                    <h2 className="flex justify-center text-center text-5xl max-sm:text-sm max-sm:space-x-1 space-x-5 flex-row text-primary-blue-50">
                         <a target="_blank" href="https://www.linkedin.com/in/samuelklosky/" className="hover:text-primary-purple-400 duration-300 group flex items-center space-x-2" 
                             onClick={() => posthog.capture('social_link_clicked', { platform: 'linkedin', url: 'https://www.linkedin.com/in/samuelklosky/' })}
                             >
@@ -150,17 +150,25 @@ export function TitleCard() {
                             href="/pdfs/Samuel_Klosky_Resume.pdf" target="_self"
                             onClick={() => posthog.capture('resume_downloaded')}
                             className="inline-block transition-all duration-300 hover:text-primary-purple-400
-                                px-6 py-2 border-2 border-primary-white-100 hover:border-primary-purple-400
+                                px-6 py-2 border-2 border-primary-white-400 hover:border-primary-purple-400
                                 hover:scale-105 rounded-sm active:scale-95"
                         >
                             RESUME
                         </a>
                     </h2>
                 </div>
-                <button type="button" className="large-caret font-[--font-mono] text-primary-blue-50 hover:text-primary-purple-400 hover:scale-105 duration-300 transition-transform" onClick={() => {
-                    posthog.capture('scroll_to_projects_clicked');
-                    document.getElementById("ProjectSection")?.scrollIntoView({ behavior: "smooth" });
-                }}><span className="hidden">Mobile Visibility Fix</span></button>
+                <div
+                    className="absolute bottom-10 flex flex-col items-center gap-3 duration-300 hover:text-primary-purple-400 hover:cursor-pointer hover:scale-105 group"
+                    onClick={() => {
+                        posthog.capture('scroll_to_projects_clicked');
+                        document.getElementById("ProjectSection")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    >
+                    <span className="text-xl uppercase">See my projects</span>
+                    <div className="w-6 h-10 rounded-full border-2 border-primary-white-100 group-hover:border-primary-purple-400 flex justify-center pt-2 transition-colors duration-300">
+                        <div className="w-1 h-2 rounded-full bg-primary-white-100 group-hover:bg-primary-purple-400 animate-bounce transition-colors duration-300" />
+                    </div>
+                </div>
 
             </section>
         </>

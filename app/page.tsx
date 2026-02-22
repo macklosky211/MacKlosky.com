@@ -28,20 +28,20 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Rotary engines require specialized compression testing due to their unique mechanics.
                   Each rotor has three chambers that must be measured individually, which makes standard compression
                   testers a nightmare to use for this. The real goal of this project was to save money instead of
                   taking my car to a dealership to do this test for me.
                 </p>
-                <h3 className="text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Arduino-Nano microcontroller reads pressure sensor data in real-time during engine cranking.
                   The data is then processed and filtered to identify peak compression values for each chamber.
                   The system accounts for rotary-specific timing patterns.
                 </p>
-                <h3 className="text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Real-time pressure reading during cranking, automatic chamber isolation and peak detection,
                   comparative analysis across all chambers, and easy data presentation for ease of use.
@@ -76,14 +76,14 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Game servers generate massive streams of telemetry such as player movements, block interactions,
                   entity spawning, and custom events, which all require real-time capture, storage, and analysis
                   while maintaining server stability and performance.
                 </p>
 
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Hybrid database architecture: PostgreSQL for web based data and transactions,
                   ClickHouse for time-series analytics across millions of events. Custom Java plugin
@@ -91,7 +91,7 @@ export default function Main() {
                   case of server failures.
                 </p>
 
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Real-time dashboard with live data visualizations, materialized views for common queries,
                   an aggressive caching layer, and failure handling for when the servers are overloaded.
@@ -120,19 +120,19 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Build a responsive combat system where player movement is based on momentum,
                   with combos that reward timing and positioning. The challenge was the short amount
                   of time I had to create the project (~1 week).
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Godot engine with GDScript for game logic and physics calculations. Custom 3D models
                   created in Blender with materials textured in Adobe Substance Painter. Implemented a full state 
                   machine for combat flow and momentum system that carries velocity between moves for fluid combos.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Physics-based momentum system where attacks effect velocity, combo chains
                   with timing windows, arena-based combat, and browser deployment for easy accessibility. 
@@ -162,20 +162,20 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Provide server administrators with tools to enhance player engagement and retention. 
                   Each mod needed to be configurable, performant, and compatible with other mods while 
                   maintaining clean integration with Hytale&apos;s core systems.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Built using Hytale&apos;s modding API with Java, using event-driven architecture for
                   game hooks and server interactions. Implemented persistent data storage for player
                   progress, configurable reward systems, and privileged commands for runtime adjustments.
                   Each mod follows modular design principles for easy maintenance and updates.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Daily login reward system with login-streak tracking, customizable loot box mechanics with
                   weighted drop tables, extensive configuration files for server-specific tuning, and
@@ -209,20 +209,20 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Create a polished, playable game within the 96-hour jam window while adhering to GMTK&apos;s
                   theme &quot;LOOPS&quot;. The challenge was scoping a mechanic deep enough to be interesting but simple enough to implement,
                   test, and iterate on within the deadline.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Built in Godot using GDScript for rapid prototyping and iteration. Assets created in
                   Blender with quick texturing passes in Adobe Substance to maintain visual consistency
                   under time pressure. Focused on core gameplay loop first, then layered polish and feedback
                   systems as time allowed. Featuring the classic NES color palette!
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Core mechanic centered around the jam theme &quot;LOOPS&quot;, tight gameplay loop designed for replayability,
                   custom 3D assets, original music, and full deployment to itch.io for public play.
@@ -250,12 +250,12 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Create a responsive movement system where speed and momentum are central to gameplay,
                   while implementing P2P networking for state synchronization, and latency compensation.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Built in Godot with GDScript handling both gameplay logic and networking layer.
                   Implemented custom P2P protocol for player state synchronization,
@@ -263,7 +263,7 @@ export default function Main() {
                   in Blender with focus on an iterative and modular design. Movement system uses
                   physics based velocity calculations for responsive, momentum-driven traversal.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Fast-paced movement mechanics with air control and momentum preservation, peer-to-peer
                   multiplayer with automatic host migration, arena-based combat with projectile weapons.
@@ -296,19 +296,19 @@ export default function Main() {
             ),
             project_description: (
               <>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Goals</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Goals</h3>
                 <p>
                   Solve the problem of manual role assignment in Discord servers where multiple members
                   want access to limited roles whether for game slots, moderator positions, or event
                   participation.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Technical Approach</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Technical Approach</h3>
                 <p>
                   Built with Discord.js in Node.js. The bot monitors role changes,
                   maintains a queue system based on time since last assignment, and handles automatic
                   rotation and filling of unfulfilled roles.
                 </p>
-                <h3 className="text-4xl text-primary-blue-50 underline py-5 font-bold">Key Features</h3>
+                <h3 className="text-4xl text-primary-white-100 underline py-5 font-bold">Key Features</h3>
                 <p>
                   Time-based priority queue that tracks role history per member, with automatic role rotation and filling for unwanted roles.
                 </p>
@@ -356,9 +356,9 @@ type ProjectSectionProps = {
 
 export function ProjectSection({ children }: ProjectSectionProps) {
   return (
-    <section id="ProjectSection" className="w-full bg-primary-blue-500 text-primary-blue-200 py-20">
+    <section id="ProjectSection" className="w-full bg-primary-blue-500 text-primary-white-200 py-20">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-7xl font-bold text-center mb-16 text-primary-blue-100 text-shadow-lg">Projects</h1>
+        <h1 className="text-7xl font-bold text-center mb-16 text-primary-white-100 text-shadow-lg">Projects</h1>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {children}
         </div>

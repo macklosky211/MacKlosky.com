@@ -45,7 +45,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                 <div className={`duration-600 transition-all h-full w-full ${isExpanded ? "scale-0 pointer-events-none" : "scale-100"}`}>
                     {PreviewCard(props)}
                 </div>
-                <div onLoad={() => { setTimeout(() => setIsLoaded(true), 1500) }} className={` ${isLoaded ? "" : "invisible hidden"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100" : "scale-0 pointer-events-none"} duration-600`}>
+                <div onLoad={() => { setTimeout(() => setIsLoaded(true), 250) }} className={` ${isLoaded ? "" : "invisible hidden"} fixed origin-center inset-0 w-screen mx-auto h-screen z-10 transition-all ${isExpanded ? "scale-100 duration-1050" : "scale-0 pointer-events-none duration-600"} `}>
                     {ExpandedCard(props)}
                 </div>
             </div>
@@ -57,10 +57,11 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
 
         return (
             <div className={`
-                bg-primary-blue-600 w-full max-w-sm max-sm:max-w-xs min-h-96 h-full overflow-hidden 
-                card-border rounded-lg mx-auto 
-                shadow-[10px_10px_5px_5px] shadow-primary-blue-700 
-                hover:shadow-[5px_5px_5px_5px] hover:scale-115
+                from-primary-blue-300 to-primary-blue-500 bg-linear-to-br
+                w-full max-w-sm max-sm:max-w-xs 
+                min-h-96 h-full overflow-hidden card-border rounded-lg mx-auto 
+                shadow-[10px_10px_5px_5px] shadow-primary-blue-600 
+                hover:scale-110
                 hover:ring-2 hover:ring-primary-purple-500
                 scroll-dramatic-grow-in  duration-300 transition-all
                 flex flex-col flex-wrap cursor-pointer
@@ -154,7 +155,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
             <>
                 {/* Background elements */}
                 {/* <div className="fixed inset-0 transition-all duration-300 delay-600 bg-primary-blue-600 pointer-events-none"></div> */}
-                <div className={`fixed inset-0 transition-all duration-200 bg-linear-to-b from-primary-blue-300 to-primary-blue-500 pointer-events-none`}></div>
+                <div className={`fixed inset-0 transition-all duration-200 bg-linear-to-l from-[#D53AED] to-[#3A52ED] pointer-events-none`}></div>
+                <div className={`fixed inset-0 transition-all duration-200 bg-linear-to-b from-transparent to-primary-purple-700 pointer-events-none`}></div>
 
                 {/* Foreground Elements - This contains everything and is scrollable */}
                 <div className="fixed inset-0 overflow-y-auto overflow-x-clip z-10">
@@ -167,8 +169,8 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                         className="fixed left-5 top-2 z-20
                                 flex items-center justify-center
                                 w-12 h-12 rounded-xl
-                                bg-primary-blue-100 border-2 border-white
-                                text-white font-bold text-xl
+                                border-2 border-primary-white-100
+                                text-primary-white-100 font-bold text-xl
                                 shadow-lg hover:shadow-xl
                                 transition-all duration-300 ease-out
                                 hover:brightness-110 hover:scale-105 hover:-translate-x-0.5
@@ -195,10 +197,10 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                         <div className="flex flex-row items-start gap-4 max-sm:flex-col">
                             {/* Left Half - Title and Summary */}
                             <div className="w-1/2 flex flex-col max-sm:w-full max-sm:contents">
-                                <h1 className="w-full text-4xl max-sm:text-xl text-center underline font-bold text-primary-blue-50 max-sm:order-1">
+                                <h1 className="w-full text-4xl max-sm:text-xl text-center underline font-bold text-primary-white-100 max-sm:order-1">
                                     {props.project_name}
                                 </h1>
-                                <div className="w-full min-h-32 p-4 text-xl max-sm:order-5 text-primary-blue-100">
+                                <div className="w-full min-h-32 p-4 text-xl max-sm:order-5 text-primary-white-100">
                                     {props.expanded_content.subtitle_description}
                                 </div>
                             </div>
@@ -236,7 +238,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                                                 >
                                                     <p
                                                         className="text-base font-bold"
-                                                        style={{ color: tech.txt_color || 'var(--primary-blue-100)' }}
+                                                        style={{ color: tech.txt_color || 'var(--primary-white-100)' }}
                                                     >
                                                         {tech.name}
                                                     </p>
@@ -259,7 +261,7 @@ export function ProjectPreviewCard(props: ProjectPreviewCardProps) {
                         </div>
 
                         {/* Description Box - Full Width */}
-                        <div className="w-full min-h-96 p-6 pb-20 text-primary-blue-100 text-xl">
+                        <div className="w-full min-h-96 p-6 pb-20 text-primary-white-100 text-xl">
                             {props.expanded_content.project_description || "Project description goes here..."}
                         </div>
                     </div>
@@ -277,7 +279,7 @@ interface PreviewCardLinkProps {
 
 export function PreviewCardLink(props: PreviewCardLinkProps) {
     return (
-        <a className="text-white italic hover:underline" href={props.href} target={props.target} 
+        <a className="text-primary-white-200 italic hover:underline" href={props.href} target={props.target} 
         onClick={(e) => { 
             e.stopPropagation();
             posthog.capture('preview_card_link_clicked', {url: props.href}); 
